@@ -19,19 +19,20 @@ const isPalindrom = (string) => {
 isPalindrom('Лёша на полке клопа нашёл ');
 
 //Функция для извлечения числа
-const extractNumber = (string) => {
-  if (typeof string === 'number') {
-    return string;
+const extractNumber = (str) => {
+  if (typeof str === 'number') {
+    return str;
   }
   let result = '';
-  for (let i = 0; i < string.length; i++) {
-    if (!Number.isNaN(parseInt(string.at(i), 10))) {
-      result += string.at(i);
+  for (let i = 0; i < str.length; i++) {
+    if (!Number.isNaN(parseInt(str.at(i), 10))) {
+      result += str.at(i);
     }
   }
   return parseInt(result, 10);
 };
-extractNumber('2023 год');
+
+console.log('2023 ', + extractNumber('2023 год'));
 extractNumber('5');
 extractNumber('цифр нет');
 
