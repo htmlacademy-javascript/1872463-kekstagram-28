@@ -1,4 +1,5 @@
-//это Точка Входа
 import {getPhotos} from './data.js'; // из модуля data.js импортируется переменная (функция) getPhotos
-
-console.log(getPhotos(25));
+import {PICTURE_COUNT} from './constants.js';
+import {renderPictures} from './pictures.js';
+//console.log(getPhotos(PICTURE_COUNT));
+renderPictures(getPhotos(PICTURE_COUNT));
