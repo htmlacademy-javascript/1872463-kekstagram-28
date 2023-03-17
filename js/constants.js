@@ -1,6 +1,4 @@
 const PICTURE_COUNT = 25; // ID фото - number
-//const URL_COUNT = 25; // ID url - string
-//const USERS_COUNT = 25; // количество пользователей - number
 const LIKE_MIN_COUNT = 15; // min число лайков - number
 const LIKE_MAX_COUNT = 200; // max число лайков - number
 const COMMENT_COUNT = 500000; // ID комментария - number
@@ -43,7 +41,7 @@ const DESCRIPTION = [
   'Пора домой',
 ];
 
-// Коментарии к фото
+// Коментарии к фото, массив
 const COMMENT_LINES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
