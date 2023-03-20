@@ -6,6 +6,7 @@ const COMMENTS_MIN_COUNT = 0; // МИН КОЛ-ВО
 const COMMENTS_MAX_COUNT = 20; // МАКС КОЛ-ВО
 const AVATAR_MIN = 1; // min значение
 const AVATAR_MAX = 6; // max значение
+const COMMENTS_STEP = 5; // ШАГ АЗГРУЗКИ КОЛ-ВА КОММЕНТАРИЕВ
 
 // Описания фото
 const DESCRIPTION = [
@@ -82,7 +83,8 @@ export {
   AVATAR_MAX,
   DESCRIPTION,
   COMMENT_LINES,
-  USER_NAMES
+  USER_NAMES,
+  COMMENTS_STEP
 };
 
 

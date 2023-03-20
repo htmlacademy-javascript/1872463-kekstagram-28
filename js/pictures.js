@@ -11,13 +11,19 @@ const renderPictures = (photos) => {
     photoElement.querySelector('.picture__img').alt = photo.description;
     photoElement.querySelector('.picture__comments').textContent = photo.comments.length;
     photoElement.querySelector('.picture__likes').textContent = photo.likes;
+    photoElement.dataset.photoId = photo.id;
     picturesFragment.append(photoElement);
-    photoElement.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      openModal(photo);
-    });
   });
   picturesContainer.append(picturesFragment);
+  picturesContainer.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('picture__img')) {
+      evt.preventDefault();
+      const id = evt.target.closest('a').dataset.photoId;
+      const index = photos.findIndex((item) => id * 1 === item.id);
+      openModal(photos[index]);
+    }
+  });
+
 };
 
 export {renderPictures};
