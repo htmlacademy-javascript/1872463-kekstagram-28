@@ -6,7 +6,11 @@ const COMMENTS_MIN_COUNT = 0; // МИН КОЛ-ВО
 const COMMENTS_MAX_COUNT = 20; // МАКС КОЛ-ВО
 const AVATAR_MIN = 1; // min значение
 const AVATAR_MAX = 6; // max значение
-const COMMENTS_STEP = 5; // ШАГ АЗГРУЗКИ КОЛ-ВА КОММЕНТАРИЕВ
+const COMMENTS_STEP = 5; // ШАГ ЗАГРУЗКИ КОЛ-ВА КОММЕНТАРИЕВ
+const MAX_LENGTH_COMMENT = 140;
+const MAX_SYMBOLS_COUNT = 20;
+const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
+const MAX_HASHTAG_COUNT = 5;
 
 // Описания фото
 const DESCRIPTION = [
@@ -84,7 +88,11 @@ export {
   DESCRIPTION,
   COMMENT_LINES,
   USER_NAMES,
-  COMMENTS_STEP
+  COMMENTS_STEP,
+  MAX_LENGTH_COMMENT,
+  VALID_SYMBOLS,
+  MAX_HASHTAG_COUNT,
+  MAX_SYMBOLS_COUNT
 };
 
 
