@@ -24,6 +24,9 @@ pristine.addValidator(
 );
 
 const validateCountHashtag = (value) => {
+  if (!value.replace(/\s+/g, '')) {
+    return true;
+  }
   const tags = value.replace(/\s+/g, ' ').trim().toLowerCase().split(' ');
   return !tags.some((item) => !VALID_SYMBOLS.test(item));
 };
