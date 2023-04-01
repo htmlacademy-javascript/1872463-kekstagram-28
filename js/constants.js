@@ -9,7 +9,7 @@ const AVATAR_MAX = 6; // max значение
 const COMMENTS_STEP = 5; // ШАГ ЗАГРУЗКИ КОЛ-ВА КОММЕНТАРИЕВ
 const MAX_LENGTH_COMMENT = 140;
 const MAX_SYMBOLS_COUNT = 20;
-const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
+const VALID_SYMBOLS = new RegExp(`^#[a-zа-яё0-9]{1,${MAX_SYMBOLS_COUNT-1}}$`,'i');
 const MAX_HASHTAG_COUNT = 5;
 
 // Описания фото
