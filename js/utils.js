@@ -1,3 +1,5 @@
+const checkLength = (string, length) => string.length <= length;
+
 // Генератор случайных чисел, с повторами
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -21,8 +23,6 @@ const createRandomIdFromRangeGenerator = (min, max) => {
     return currentValue;
   };
 };
-
-const checkLength = (string, length) => string.length <= length;
 
 export {
   getRandomInteger,

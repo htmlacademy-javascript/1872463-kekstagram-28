@@ -1,7 +1,6 @@
 import {COMMENTS_STEP} from './constants.js';
 
 const bigPictureModal = document.querySelector('.big-picture'); // модальное окно
-// const bigPictureModalOpen = document.querySelector('.picture'); // ссылка по клике на которую откроется модальное окно
 const bigPictureModalClose = bigPictureModal.querySelector('.cancel'); // кнопка закрытия модального окна
 const bigPictureImage = bigPictureModal.querySelector('.big-picture__img img');
 const bigPictureLikes = bigPictureModal.querySelector('.likes-count');
@@ -71,7 +70,6 @@ const renderModal = (photo) => {
 };
 
 const openModal = (photo) => {
-  //console.log(photo);
   commentsContainer.innerHTML = '';
   commentsCount = 0;
   commentsTotal = photo.comments.length;

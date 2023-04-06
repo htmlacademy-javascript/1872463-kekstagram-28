@@ -1,11 +1,12 @@
-import {getPhotos} from './data.js'; // из модуля data.js импортируется переменная (функция) getPhotos
-import {PICTURE_COUNT} from './constants.js';
 import {renderPictures} from './pictures.js';
 import {openModalUpload} from './form.js';
+import {getPhotos} from './api.js';
 
 const fileInput = document.querySelector('.img-upload__input');
 
-renderPictures(getPhotos(PICTURE_COUNT));
+getPhotos().then((photos) => {
+  renderPictures(photos);
+});
 
 fileInput.addEventListener('change', () => {
   openModalUpload();
