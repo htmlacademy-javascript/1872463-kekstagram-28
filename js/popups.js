@@ -42,5 +42,4 @@ const errorHandler = () => {
   document.addEventListener('keydown', escErrorHandler);
 };
 
-
 export { successHandler, errorHandler };
