@@ -72,7 +72,7 @@ const renderModal = (photo) => {
 const openModal = (photo) => {
   commentsContainer.innerHTML = '';
   commentsCount = 0;
-  commentsTotal = photo.comments.length;
+  commentsTotal = photo.comments?.length ? photo.comments.length : 0;
   commentsList.length = 0;
   commentsList.push(...photo.comments.slice());
   renderModal(photo);
