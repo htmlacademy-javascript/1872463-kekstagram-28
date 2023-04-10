@@ -9,6 +9,12 @@ const MAX_RANDOM_PHOTOS = 10;
 const DEBOUNCE_TIMEOUT = 500;
 const ALERT_SHOW_TIME = 5000;
 const ALERT_TEXT = 'Повторите попытку позже';
+const FILE_TYPES = ['jpg', 'jpeg', 'png'];
+const SubmitButtonText = {
+  IDLE: 'Опубликовать',
+  SENDING: 'Публикую...'
+};
+const INVALID_FILE_FORMAT = 'Данный файл не является изображением';
 
 export {
   COMMENTS_STEP,
@@ -21,5 +27,8 @@ export {
   MAX_RANDOM_PHOTOS,
   DEBOUNCE_TIMEOUT,
   ALERT_SHOW_TIME,
-  ALERT_TEXT
+  ALERT_TEXT,
+  FILE_TYPES,
+  SubmitButtonText,
+  INVALID_FILE_FORMAT
 };

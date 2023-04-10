@@ -1,4 +1,5 @@
 import { escModalHandler } from './form.js';
+import { isEscapeKey } from './utils.js';
 
 const successTemlate = document.querySelector('#success').content.querySelector('.success');
 const successPopup = successTemlate.cloneNode(true);
@@ -15,13 +16,13 @@ const closePopup = (popup, handler) => {
 };
 
 const escSuccessHandler = (evt) => {
-  if (evt.key === 'Escape') {
+  if (isEscapeKey(evt.key)) {
     closePopup('.success', escSuccessHandler);
   }
 };
 
 const escErrorHandler = (evt) => {
-  if (evt.key === 'Escape') {
+  if (isEscapeKey(evt.key)) {
     closePopup('.error', escErrorHandler);
   }
 };

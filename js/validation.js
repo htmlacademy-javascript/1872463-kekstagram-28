@@ -20,7 +20,9 @@ const validateComments = (value) => checkLength(value, MAX_LENGTH_COMMENT);
 pristine.addValidator(
   comments,
   validateComments,
-  `Длина комментария не должна превышать ${MAX_LENGTH_COMMENT}`
+  `Длина комментария не должна превышать ${MAX_LENGTH_COMMENT}`,
+  1,
+  true
 );
 
 const validateCountHashtag = (value) => {
@@ -34,7 +36,9 @@ const validateCountHashtag = (value) => {
 pristine.addValidator(
   inputHashtags,
   validateCountHashtag,
-  `Хэштег должен начинаться с символа #, содержать символы латинского и русского алфавитов, цифры, его длина не должна превышать ${MAX_SYMBOLS_COUNT} символов`
+  `Хэштег должен начинаться с символа #, содержать символы латинского и русского алфавитов, цифры, его длина не должна превышать ${MAX_SYMBOLS_COUNT} символов`,
+  1,
+  true
 );
 
 const validateNumberHashtag = (value) => {
@@ -45,7 +49,9 @@ const validateNumberHashtag = (value) => {
 pristine.addValidator(
   inputHashtags,
   validateNumberHashtag,
-  `Количество хештегов должно быть не больше ${MAX_HASHTAG_COUNT}`
+  `Количество хештегов должно быть не больше ${MAX_HASHTAG_COUNT}`,
+  1,
+  true
 );
 
 const validateUniqueHashtag = (value) => {
@@ -57,7 +63,9 @@ const validateUniqueHashtag = (value) => {
 pristine.addValidator(
   inputHashtags,
   validateUniqueHashtag,
-  'Хештеги не должны повторяться'
+  'Хештеги не должны повторяться',
+  1,
+  true
 );
 
 const validateForm = () => pristine.validate();

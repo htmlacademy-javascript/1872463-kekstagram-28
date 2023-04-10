@@ -10,6 +10,8 @@ const debounce = (callback, timeoutDelay = 500) => {
   };
 };
 
+const isEscapeKey = (key) => key === 'Escape';
+
 const showAlert = (message) => {
   const alertContainer = document.createElement('div');
   alertContainer.style.zIndex = '100';
@@ -34,5 +36,6 @@ const showAlert = (message) => {
 export {
   checkLength,
   debounce,
-  showAlert
+  showAlert,
+  isEscapeKey
 };
