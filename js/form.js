@@ -3,6 +3,7 @@ import { resetScale } from './scale.js';
 import { resetEffects } from './effect.js';
 import { postPhoto } from './api.js';
 import { successHandler, errorHandler } from './popups.js';
+import { FILE_TYPES, SubmitButtonText, INVALID_FILE_FORMAT } from './constants.js';
 
 const modal = document.querySelector('.img-upload__overlay');
 const buttonClose = document.querySelector('.img-upload__cancel');
@@ -21,7 +22,7 @@ const hideModal = () => {
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (validateForm()) {
-    buttonSubmit.textContent = 'Публикую...';
+    buttonSubmit.textContent = SubmitButtonText.SENDING;
     buttonSubmit.disabled = true;
     postPhoto(new FormData(evt.target))
       .then((response) => {
@@ -38,7 +39,7 @@ form.addEventListener('submit', (evt) => {
         errorHandler();
       })
       .finally(() => {
-        buttonSubmit.textContent = 'Опубликовать';
+        buttonSubmit.textContent = SubmitButtonText.IDLE;
         buttonSubmit.disabled = false;
       });
   }
@@ -67,7 +68,15 @@ buttonClose.addEventListener('click', () => {
 const openModalUpload = () => {
   showModal();
   const fileImage = imageUpload.files[0];
-  imagePreview.src = URL.createObjectURL(fileImage);
+  const fileName = fileImage.name.toLowerCase();
+  const matches = FILE_TYPES.some((item) => fileName.endsWith(item));
+  if (matches) {
+    imagePreview.src = URL.createObjectURL(fileImage);
+  } else {
+    imagePreview.src = '';
+    imagePreview.alt = INVALID_FILE_FORMAT;
+    imagePreview.style.backgroundColor = 'grey';
+  }
   resetScale();
   resetEffects();
 };
