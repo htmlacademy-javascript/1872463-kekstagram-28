@@ -1,4 +1,5 @@
 import { ALERT_SHOW_TIME } from './constants.js';
+import { closePopup } from './popups.js';
 
 const checkLength = (string, length) => string.length <= length;
 
@@ -11,6 +12,12 @@ const debounce = (callback, timeoutDelay = 500) => {
 };
 
 const isEscapeKey = (key) => key === 'Escape';
+
+const escHandler = (evt, popup, handler) => {
+  if (isEscapeKey(evt.key)) {
+    closePopup(popup, handler);
+  }
+};
 
 const showAlert = (message) => {
   const alertContainer = document.createElement('div');
@@ -37,5 +44,6 @@ export {
   checkLength,
   debounce,
   showAlert,
-  isEscapeKey
+  isEscapeKey,
+  escHandler
 };
